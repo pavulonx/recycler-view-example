@@ -10,12 +10,16 @@ import kotlinx.android.synthetic.main.content_main.*
 import pl.rozen.swim.recyclerviewexample.domain.Album
 import pl.rozen.swim.recyclerviewexample.R
 import pl.rozen.swim.recyclerviewexample.adapters.AlbumsAdapter
-import java.util.*
+import pl.rozen.swim.recyclerviewexample.listeners.RecyclerTouchListener
+import android.widget.Toast
+import android.view.View
+import kotlin.collections.ArrayList
+
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var mAdapter:AlbumsAdapter
-    private val albumList = LinkedList<Album>()
+    private val albumList = ArrayList<Album>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,29 +36,40 @@ class MainActivity : AppCompatActivity() {
         recyclerView.addItemDecoration(dividerItemDecoration)
 
         recyclerView.adapter = mAdapter
+
+
+        recyclerView.addOnItemTouchListener(RecyclerTouchListener(
+                applicationContext, recyclerView, object : RecyclerTouchListener.ClickListener {
+            override fun onClick(view: View, position: Int) {
+                val album = albumList[position]
+                Toast.makeText(applicationContext, album.title + " is selected!", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onLongClick(view: View, position: Int) {
+            }
+        }))
+
         prepareMovieData()
 
     }
     private fun prepareMovieData() {
         val movies = arrayListOf(
                 Album("Got Your Six", "Five Finger Death Punch", "heavy metal", "2015"),
-                Album("The Wrong Side of Heaven and the Righteous Side of Hell, Volume 1 I jeszcze dłuższy text",
+                Album("The Wrong Side of Heaven and the Righteous Side of Hell, Volume 1",
                         "Five Finger Death Punch", "heavy metal", "2013"),
                 Album("The Wrong Side of Heaven and the Righteous Side of Hell, Volume 2",
                         "Five Finger Death Punch", "heavy metal", "2013"),
                 Album("American Capitalist", "Five Finger Death Punch","heavy metal", "2011"),
-                Album("Some Title", "The Martian", "Science Fiction & Fantasy", "2015"),
-                Album("Some Title", "Mission: Impossible Rogue Nation", "Action", "2015"),
-                Album("Some Title", "Up", "Animation", "2009"),
-                Album("Some Title", "Star Trek", "Science Fiction", "2009"),
-                Album("Some Title", "The LEGO Movie", "Animation", "2014"),
-                Album("Some Title", "Iron Man", "Action & Adventure", "2008"),
-                Album("Some Title", "Aliens", "Science Fiction", "1986"),
-                Album("Some Title", "Chicken Run", "Animation", "2000"),
-                Album("Some Title", "Back to the Future", "Science Fiction", "1985"),
-                Album("Some Title", "Raiders of the Lost Ark", "Action & Adventure", "1981"),
-                Album("Some Title", "Goldfinger", "Action & Adventure", "1965"),
-                Album("Some Title", "Guardians of the Galaxy", "Science Fiction & Fantasy", "2014")
+                Album("Nightmare", "Avenged Sevenfold", "heavy metal", "2010"),
+                Album("Hail to the King", "Avenged Sevenfold", "heavy metal", "2013"),
+                Album("The Stage","Avenged Sevenfold", "heavy metal", "2016"),
+                Album("Avenged Sevenfold","Avenged Sevenfold", "heavy metal", "2017"),
+                Album("Seal the Deal & Let's Boogie", "Volbeat", "alternative metal, heavy metal", "2016"),
+                Album("Outlaw Gentlemen & Shady Ladies", "Volbeat", "alternative metal, heavy metal", "2013"),
+                Album("Beyond Hell / Above Heaven", "Volbeat", "heavy metal", "2010"),
+                Album("Guitar Gangsters & Cadillac Blood", "Volbeat", "alternative metal", "2008"),
+                Album("Rock the Rebel / Metal the Devil", "Volbeat", "heavy metal", "2007"),
+                Album("The Strength / The Sound / The Songs", "Volbeat", "heavy metal", "2005")
         )
         albumList.addAll(movies)
         mAdapter.notifyDataSetChanged()
