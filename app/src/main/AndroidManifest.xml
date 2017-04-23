@@ -9,13 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name="pl.rozen.swim.recyclerviewexample.activities.MainActivity">
+        <activity
+            android:name=".activities.MainActivity"
+            android:label="@string/main_activity_label">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activities.AboutActivity"
+            android:label="@string/about_activity_label"
+            android:parentActivityName=".activities.MainActivity"/>
     </application>
 
 </manifest>
