@@ -1,6 +1,5 @@
 package pl.rozen.swim.recyclerviewexample.adapters
 
-import android.animation.Animator
 import android.support.design.widget.Snackbar
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -14,9 +13,9 @@ import org.jetbrains.anko.imageResource
 import kotlinx.android.synthetic.main.album_list_row_even.view.*
 import kotlinx.android.synthetic.main.album_list_row_odd.view.*
 
-class AlbumsAdapter(private val albumsList: MutableList<Album>,
-                    private val itemClick: (Album) -> Unit) :
-        RecyclerView.Adapter<AlbumsAdapter.AlbumViewHolder>() {
+class AlbumAdapter(private val albumsList: MutableList<Album>,
+                   private val itemClick: (Album) -> Unit) :
+        RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder>() {
 
     override fun getItemCount() = albumsList.size
 
@@ -50,12 +49,7 @@ class AlbumsAdapter(private val albumsList: MutableList<Album>,
             }
         }
 
-        protected fun bindViews(album: Album, posterBackground: ImageView, poster: ImageView, title: TextView, genre: TextView, year: TextView, heardIcon: ImageView) = with(album) {
-            //            TODO
-//            posterBackground.imageResource = posterId
-
-//            Picasso.with(posterBackground.context).load(posterId).fit().centerCrop()
-//                    .transform(BlurTransformation(posterBackground.context, 8)).into(posterBackground)
+        protected fun bindViews(album: Album, poster: ImageView, title: TextView, genre: TextView, year: TextView, heardIcon: ImageView) = with(album) {
             poster.imageResource = posterId
             title.text = this.title
             genre.text = this.genre
@@ -71,6 +65,9 @@ class AlbumsAdapter(private val albumsList: MutableList<Album>,
 
         protected fun flipAlbum(album: Album) {
             album.heard = !album.heard
+            heardIconUpdate(album.heard)
+
+
 //            heardIcon.rotationY = 0f
 //            val duration: Long = 120
 //            heardIcon.animate().rotationY(90f).setDuration(duration).setListener(object : SimpleAnimatorListener() {
@@ -86,14 +83,14 @@ class AlbumsAdapter(private val albumsList: MutableList<Album>,
     class AlbumViewHolderEven(itemView: View, itemClick: (Album) -> Unit) : AlbumViewHolder(itemView, itemView.heardIconEven, itemClick) {
         override fun bindAlbum(album: Album) = with(itemView) {
             super.bindAlbum(album)
-            bindViews(album, posterBackgroundEven, posterEven, titleEven, genreEven, yearEven, heardIconEven)
+            bindViews(album, posterEven, titleEven, genreEven, yearEven, heardIconEven)
         }
     }
 
     class AlbumViewHolderOdd(itemView: View, itemClick: (Album) -> Unit) : AlbumViewHolder(itemView, itemView.heardIconOdd, itemClick) {
         override fun bindAlbum(album: Album) = with(itemView) {
             super.bindAlbum(album)
-            bindViews(album, posterBackgroundOdd, posterOdd, titleOdd, genreOdd, yearOdd, heardIconOdd)
+            bindViews(album, posterOdd, titleOdd, genreOdd, yearOdd, heardIconOdd)
         }
 
     }

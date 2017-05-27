@@ -51,4 +51,5 @@ class AlbumDetailsActivity : AppCompatActivity() {
 
         override fun getCount() = NUM_PAGES
     }
+
 }

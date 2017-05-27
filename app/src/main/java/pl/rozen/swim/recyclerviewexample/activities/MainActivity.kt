@@ -13,9 +13,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import pl.rozen.swim.recyclerviewexample.domain.Album
 import pl.rozen.swim.recyclerviewexample.R
-import pl.rozen.swim.recyclerviewexample.adapters.AlbumsAdapter
+import pl.rozen.swim.recyclerviewexample.adapters.AlbumAdapter
 import pl.rozen.swim.recyclerviewexample.listeners.RecyclerTouchListener
-import android.widget.Toast
 import android.view.View
 import org.jetbrains.anko.startActivity
 import kotlin.collections.ArrayList
@@ -23,7 +22,7 @@ import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var adapter: AlbumsAdapter
+    lateinit var adapter: AlbumAdapter
     private val albumList = ArrayList<Album>()
 
 
@@ -34,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 
-        adapter = AlbumsAdapter(albumList) {
+        adapter = AlbumAdapter(albumList) {
             startActivity<AlbumDetailsActivity>(AlbumDetailsActivity.MOVIE_INDEX to albumList.indexOf(it))
         }
         val mLayoutManager = LinearLayoutManager(applicationContext)
@@ -47,16 +46,17 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
 
 
-        recyclerView.addOnItemTouchListener(RecyclerTouchListener(
-                applicationContext, recyclerView, object : RecyclerTouchListener.ClickListener {
-            override fun onClick(view: View, position: Int) {
-//                val album = albumList[position]
-//                Toast.makeText(applicationContext, album.title + " is selected!", Toast.LENGTH_SHORT).show()
-            }
-
-            override fun onLongClick(view: View, position: Int) {
-            }
-        }))
+//        recyclerView.addOnItemTouchListener(RecyclerTouchListener(
+//                applicationContext, recyclerView, object : RecyclerTouchListener.ClickListener {
+//            override fun onClick(view: View, position: Int) {
+////                val album = albumList[position]
+////                Toast.makeText(applicationContext, album.title + " is selected!", Toast.LENGTH_SHORT).show()
+//            }
+//
+//            override fun onLongClick(view: View, position: Int) {
+////                albumList[position].heard = !albumList[position].heard
+//            }
+//        }))
 
         val simpleItemTouchCallback: ItemTouchHelper.SimpleCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
             override fun onMove(recyclerView: RecyclerView?, viewHolder: RecyclerView.ViewHolder?, target: RecyclerView.ViewHolder?) = false
