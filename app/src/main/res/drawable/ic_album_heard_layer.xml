@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:shape="rectangle">
+            <corners android:radius="@dimen/list_heard_background_radius" />
+            <solid android:color="@color/heardBackground" />
+            <padding
+                android:bottom="@dimen/list_heard_background_padding"
+                android:left="@dimen/list_heard_background_padding"
+                android:right="@dimen/list_heard_background_padding"
+                android:top="@dimen/list_heard_background_padding" />
+        </shape>
+    </item>
+    <item>
+        <selector xmlns:android="http://schemas.android.com/apk/res/android">
+            <item>
+                <bitmap
+                    android:src="@drawable/ic_album_heard"
+                    android:tint="@android:color/white" />
+            </item>
+        </selector>
+    </item>
+</layer-list>

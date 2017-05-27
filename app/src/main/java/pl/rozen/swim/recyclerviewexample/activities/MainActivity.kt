@@ -26,13 +26,17 @@ class MainActivity : AppCompatActivity() {
     lateinit var adapter: AlbumsAdapter
     private val albumList = ArrayList<Album>()
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         setSupportActionBar(toolbar)
 
-        adapter = AlbumsAdapter(albumList)
+        adapter = AlbumsAdapter(albumList) {
+            startActivity<AlbumDetailsActivity>(AlbumDetailsActivity.MOVIE_INDEX to albumList.indexOf(it))
+        }
         val mLayoutManager = LinearLayoutManager(applicationContext)
         recyclerView.layoutManager = mLayoutManager
         recyclerView.itemAnimator = DefaultItemAnimator()
@@ -101,7 +105,7 @@ class MainActivity : AppCompatActivity() {
                 Album("Beyond Hell / Above Heaven", "Volbeat", "heavy metal", "2010"),
                 Album("Guitar Gangsters & Cadillac Blood", "Volbeat", "alternative metal", "2008"),
                 Album("Rock the Rebel / Metal the Devil", "Volbeat", "heavy metal", "2007"),
-                Album("The Strength / The Sound / The Songs", "Volbeat", "heavy metal", "2005", arrayListOf("11111111111111111111111","222222222222222222222222","33333333333333333333","444444444444444444444444444"))
+                Album("The Strength / The Sound / The Songs", "Volbeat", "heavy metal", "2005")
         )
         albumList.addAll(movies)
         adapter.notifyDataSetChanged()

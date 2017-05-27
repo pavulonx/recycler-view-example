@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RecyclerViewExample</string>
+    <string name="app_name">Albums</string>
     <string name="github_site">http://github.com/jakubrozenbajger</string>
     <string name="share_error">You don\'t have a web browser! Please install and try again.</string>
     <string name="action_settings">Settings</string>
