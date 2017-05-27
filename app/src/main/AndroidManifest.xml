@@ -22,7 +22,10 @@
             android:name=".activities.AboutActivity"
             android:label="@string/about_activity_label"
             android:parentActivityName=".activities.MainActivity" />
-        <activity android:name=".activities.AlbumDetailsActivity"></activity>
+        <activity
+            android:name=".activities.AlbumDetailsActivity"
+            android:label="@string/about_activity_label"
+            android:parentActivityName=".activities.MainActivity" />
     </application>
 
 </manifest>

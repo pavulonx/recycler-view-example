@@ -50,8 +50,8 @@ class MainActivity : AppCompatActivity() {
         recyclerView.addOnItemTouchListener(RecyclerTouchListener(
                 applicationContext, recyclerView, object : RecyclerTouchListener.ClickListener {
             override fun onClick(view: View, position: Int) {
-                val album = albumList[position]
-                Toast.makeText(applicationContext, album.title + " is selected!", Toast.LENGTH_SHORT).show()
+//                val album = albumList[position]
+//                Toast.makeText(applicationContext, album.title + " is selected!", Toast.LENGTH_SHORT).show()
             }
 
             override fun onLongClick(view: View, position: Int) {
