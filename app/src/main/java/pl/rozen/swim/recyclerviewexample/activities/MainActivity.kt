@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
         val itemTouchHelper = ItemTouchHelper(simpleItemTouchCallback)
         itemTouchHelper.attachToRecyclerView(recyclerView)
 
-        prepareMovieData()
+        prepareAlbumData()
 
     }
 
@@ -88,7 +88,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun prepareMovieData() {
+    private fun prepareAlbumData() {
         val movies = arrayListOf(
                 Album("Got Your Six", "Five Finger Death Punch", "heavy metal", "2015"),
                 Album("The Wrong Side of Heaven and the Righteous Side of Hell, Volume 1",
