@@ -19,7 +19,7 @@ object DatabaseHelper {
 
     private fun prepareData(): MutableList<Album> {
         val albums = arrayListOf(
-                Album("Got Your Six", "Five Finger Death Punch", "heavy metal", "2015"),
+                Album("Got Your Six", "Five Finger Death Punch", "heavy metal", "2015", description = "Got Your Six is the sixth studio album by American heavy metal band Five Finger Death Punch. It was released on September 4, 2015 on the Prospect Park label.[2][3] Got Your Six sold 119,000 units to debut at No. 2 on the Billboard 200. The 114,000 in pure album sales made it the No. 1-selling album of the week and the band's best sales week to date. Got Your Six is also their third consecutive set to debut at No. 2."),
                 Album("The Wrong Side of Heaven and the Righteous Side of Hell, Volume 1",
                         "Five Finger Death Punch", "heavy metal", "2013"),
                 Album("The Wrong Side of Heaven and the Righteous Side of Hell, Volume 2",

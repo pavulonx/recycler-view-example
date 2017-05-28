@@ -32,5 +32,10 @@ class AlbumDetailMainFragment : Fragment() {
         album_title_text_view.text = this.album.title
         album_detail_rating_bar.rating = this.album.rating
         poster_album_detail_image_view.imageResource = this.album.posterId
+        album_detail_rating_bar.setOnRatingBarChangeListener {
+            _, rating, fromUser ->
+            if (fromUser) album.rating = rating
+
+        }
     }
 }

@@ -1,7 +1,7 @@
 package pl.rozen.swim.recyclerviewexample.activities
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
@@ -11,20 +11,16 @@ import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
-import pl.rozen.swim.recyclerviewexample.domain.Album
+import org.jetbrains.anko.startActivity
 import pl.rozen.swim.recyclerviewexample.R
 import pl.rozen.swim.recyclerviewexample.adapters.AlbumAdapter
-import pl.rozen.swim.recyclerviewexample.listeners.RecyclerTouchListener
-import android.view.View
-import org.jetbrains.anko.startActivity
-import kotlin.collections.ArrayList
+import pl.rozen.swim.recyclerviewexample.models.DatabaseHelper
 
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var adapter: AlbumAdapter
-    private val albumList = ArrayList<Album>()
-
+    private val albumList = DatabaseHelper.albumsList
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         adapter = AlbumAdapter(albumList) {
-            startActivity<AlbumDetailsActivity>(AlbumDetailsActivity.MOVIE_INDEX to albumList.indexOf(it))
+            startActivity<AlbumDetailsActivity>(AlbumDetailsActivity.ALBUM_INDEX to albumList.indexOf(it))
         }
         val mLayoutManager = LinearLayoutManager(applicationContext)
         recyclerView.layoutManager = mLayoutManager
@@ -69,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         val itemTouchHelper = ItemTouchHelper(simpleItemTouchCallback)
         itemTouchHelper.attachToRecyclerView(recyclerView)
 
-        prepareAlbumData()
+        adapter.notifyDataSetChanged()
 
     }
 
@@ -88,26 +84,4 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun prepareAlbumData() {
-        val movies = arrayListOf(
-                Album("Got Your Six", "Five Finger Death Punch", "heavy metal", "2015"),
-                Album("The Wrong Side of Heaven and the Righteous Side of Hell, Volume 1",
-                        "Five Finger Death Punch", "heavy metal", "2013"),
-                Album("The Wrong Side of Heaven and the Righteous Side of Hell, Volume 2",
-                        "Five Finger Death Punch", "heavy metal", "2013"),
-                Album("American Capitalist", "Five Finger Death Punch", "heavy metal", "2011"),
-                Album("Nightmare", "Avenged Sevenfold", "heavy metal", "2010"),
-                Album("Hail to the King", "Avenged Sevenfold", "heavy metal", "2013"),
-                Album("The Stage", "Avenged Sevenfold", "heavy metal", "2016"),
-                Album("Avenged Sevenfold", "Avenged Sevenfold", "heavy metal", "2017"),
-                Album("Seal the Deal & Let's Boogie", "Volbeat", "alternative metal, heavy metal", "2016"),
-                Album("Outlaw Gentlemen & Shady Ladies", "Volbeat", "alternative metal, heavy metal", "2013"),
-                Album("Beyond Hell / Above Heaven", "Volbeat", "heavy metal", "2010"),
-                Album("Guitar Gangsters & Cadillac Blood", "Volbeat", "alternative metal", "2008"),
-                Album("Rock the Rebel / Metal the Devil", "Volbeat", "heavy metal", "2007"),
-                Album("The Strength / The Sound / The Songs", "Volbeat", "heavy metal", "2005")
-        )
-        albumList.addAll(movies)
-        adapter.notifyDataSetChanged()
-    }
 }

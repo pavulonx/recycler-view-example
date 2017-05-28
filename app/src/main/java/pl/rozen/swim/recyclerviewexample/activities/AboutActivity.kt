@@ -8,23 +8,15 @@ import pl.rozen.swim.recyclerviewexample.R
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
-import android.support.v7.widget.Toolbar
-import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_about.*
-import org.jetbrains.anko.find
 import org.jetbrains.anko.toast
 import pl.rozen.swim.recyclerviewexample.BuildConfig
 
-
 class AboutActivity : AppCompatActivity() {
-
-//    val toolbar_about by lazy { find<Toolbar>(R.id.toolbar_about) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about)
-
-//        setSupportActionBar(toolbar_about)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
