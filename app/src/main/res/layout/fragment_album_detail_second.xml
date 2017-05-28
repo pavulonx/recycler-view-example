@@ -14,10 +14,10 @@
         android:columnCount="3"
         android:orientation="vertical"
         android:rowCount="2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="8dp">
+        android:rowOrderPreserved="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <ImageView
@@ -28,7 +28,9 @@
             android:layout_columnWeight="1"
             android:layout_row="0"
             android:layout_rowWeight="1"
-            android:src="@drawable/ic_album_heard" />
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/no_image" />
 
 
         <ImageView
@@ -39,7 +41,9 @@
             android:layout_columnWeight="1"
             android:layout_row="0"
             android:layout_rowWeight="1"
-            android:src="@drawable/ic_album_heard" />
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/no_image" />
 
 
         <ImageView
@@ -50,7 +54,9 @@
             android:layout_columnWeight="1"
             android:layout_row="0"
             android:layout_rowWeight="1"
-            android:src="@drawable/ic_album_heard" />
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/no_image" />
 
 
         <ImageView
@@ -61,7 +67,9 @@
             android:layout_columnWeight="1"
             android:layout_row="1"
             android:layout_rowWeight="1"
-            android:src="@drawable/ic_album_heard" />
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/no_image" />
 
 
         <ImageView
@@ -72,7 +80,9 @@
             android:layout_columnWeight="1"
             android:layout_row="1"
             android:layout_rowWeight="1"
-            android:src="@drawable/ic_album_heard" />
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/no_image" />
 
 
         <ImageView
@@ -83,25 +93,123 @@
             android:layout_columnWeight="1"
             android:layout_row="1"
             android:layout_rowWeight="1"
-            android:src="@drawable/ic_album_heard" />
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/no_image" />
 
     </GridLayout>
 
-    <ListView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+
+
+    <ImageView
+        android:id="@+id/artist_image_view_0"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gird_layout_images">
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toBottomOf="@id/gird_layout_images"
+        android:src="@drawable/undefined_person_image"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/artist_text_view_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="Musician0"
+        android:textSize="16dp"
+        app:layout_constraintLeft_toRightOf="@+id/artist_image_view_0"
+        app:layout_constraintBottom_toBottomOf="@+id/artist_image_view_0"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toTopOf="@+id/artist_image_view_0"
+        android:layout_marginTop="8dp"/>
+
+    <ImageView
+        android:id="@+id/artist_image_view_1"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toBottomOf="@id/artist_image_view_0"
+        android:src="@drawable/undefined_person_image"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/artist_text_view_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="Musician1"
+        android:textSize="16dp"
+        app:layout_constraintLeft_toRightOf="@+id/artist_image_view_1"
+        app:layout_constraintBottom_toBottomOf="@+id/artist_image_view_1"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toTopOf="@+id/artist_image_view_1"
+        android:layout_marginTop="8dp"/>
+
+    <ImageView
+        android:id="@+id/artist_image_view_2"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toBottomOf="@id/artist_image_view_1"
+        android:src="@drawable/undefined_person_image"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/artist_text_view_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="Musician2"
+        android:textSize="16dp"
+        app:layout_constraintLeft_toRightOf="@+id/artist_image_view_2"
+        app:layout_constraintBottom_toBottomOf="@+id/artist_image_view_2"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toTopOf="@+id/artist_image_view_2"
+        android:layout_marginTop="8dp"/>
+
+    <ImageView
+        android:id="@+id/artist_image_view_3"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toBottomOf="@id/artist_image_view_2"
+        android:src="@drawable/undefined_person_image"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/artist_text_view_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:text="Musician3"
+        android:textSize="16dp"
+        app:layout_constraintLeft_toRightOf="@+id/artist_image_view_3"
+        app:layout_constraintBottom_toBottomOf="@+id/artist_image_view_3"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintTop_toTopOf="@+id/artist_image_view_3"
+        android:layout_marginTop="8dp"/>
+
+    <!--<ListView-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/gird_layout_images">-->
 
 
-    </ListView>
+    <!--</ListView>-->
 
     <!--<android.support.v7.widget.GridLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
     <!--android:layout_width="0dp"-->

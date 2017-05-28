@@ -28,7 +28,7 @@
             android:layout_columnWeight="1"
             android:layout_row="0"
             android:layout_rowWeight="1"
-            android:src="@drawable/ic_album_heard" />
+            android:src="@drawable/no_image" />
 
 
         <ImageView
@@ -39,7 +39,7 @@
             android:layout_columnWeight="1"
             android:layout_row="0"
             android:layout_rowWeight="1"
-            android:src="@drawable/ic_album_heard" />
+            android:src="@drawable/no_image" />
 
 
         <ImageView
@@ -50,7 +50,7 @@
             android:layout_columnWeight="1"
             android:layout_row="0"
             android:layout_rowWeight="1"
-            android:src="@drawable/ic_album_heard" />
+            android:src="@drawable/no_image" />
 
 
         <ImageView
@@ -61,7 +61,7 @@
             android:layout_columnWeight="1"
             android:layout_row="1"
             android:layout_rowWeight="1"
-            android:src="@drawable/ic_album_heard" />
+            android:src="@drawable/no_image" />
 
 
         <ImageView
@@ -72,7 +72,7 @@
             android:layout_columnWeight="1"
             android:layout_row="1"
             android:layout_rowWeight="1"
-            android:src="@drawable/ic_album_heard" />
+            android:src="@drawable/no_image" />
 
 
         <ImageView
@@ -83,21 +83,103 @@
             android:layout_columnWeight="1"
             android:layout_row="1"
             android:layout_rowWeight="1"
-            android:src="@drawable/ic_album_heard" />
+            android:src="@drawable/no_image" />
 
     </GridLayout>
 
-    <ListView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/gird_layout_images"
-        app:layout_constraintTop_toTopOf="parent">
+    <ImageView
+        android:id="@+id/artist_image_view_0"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/undefined_person_image"
+        app:layout_constraintLeft_toRightOf="@id/gird_layout_images"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    </ListView>
+    <TextView
+        android:id="@+id/artist_text_view_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Musician0"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/artist_image_view_0"
+        app:layout_constraintLeft_toRightOf="@+id/artist_image_view_0"
+        app:layout_constraintTop_toTopOf="@+id/artist_image_view_0" />
 
+    <ImageView
+        android:id="@+id/artist_image_view_1"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="7dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/undefined_person_image"
+        app:layout_constraintLeft_toRightOf="@id/gird_layout_images"
+        app:layout_constraintTop_toBottomOf="@id/artist_image_view_0" />
+
+    <TextView
+        android:id="@+id/artist_text_view_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Musician1"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/artist_image_view_1"
+        app:layout_constraintLeft_toRightOf="@+id/artist_image_view_1"
+        app:layout_constraintTop_toTopOf="@+id/artist_image_view_1" />
+
+    <ImageView
+        android:id="@+id/artist_image_view_2"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/undefined_person_image"
+        app:layout_constraintLeft_toRightOf="@id/gird_layout_images"
+        app:layout_constraintTop_toBottomOf="@id/artist_image_view_1" />
+
+    <TextView
+        android:id="@+id/artist_text_view_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Musician2"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/artist_image_view_2"
+        app:layout_constraintLeft_toRightOf="@+id/artist_image_view_2"
+        app:layout_constraintTop_toTopOf="@+id/artist_image_view_2" />
+
+    <ImageView
+        android:id="@+id/artist_image_view_3"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/undefined_person_image"
+        app:layout_constraintLeft_toRightOf="@id/gird_layout_images"
+        app:layout_constraintTop_toBottomOf="@id/artist_image_view_2" />
+
+    <TextView
+        android:id="@+id/artist_text_view_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="Musician3"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/artist_image_view_3"
+        app:layout_constraintLeft_toRightOf="@+id/artist_image_view_3"
+        app:layout_constraintTop_toTopOf="@+id/artist_image_view_3" />
 </android.support.constraint.ConstraintLayout>
