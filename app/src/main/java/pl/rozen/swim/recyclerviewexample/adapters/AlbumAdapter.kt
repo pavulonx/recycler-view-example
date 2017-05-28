@@ -26,12 +26,10 @@ class AlbumAdapter(private val albumsList: MutableList<Album>,
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbumViewHolder {
         when (viewType) {
             0 -> {
-//                val itemView = parent.inflate(R.layout.album_list_row_even)
                 val itemView = LayoutInflater.from(parent.context).inflate(R.layout.album_list_row_even, parent, false)
                 return AlbumViewHolderEven(itemView, itemClick)
             }
             else -> {
-//                val itemView = parent.inflate(R.layout.album_list_row_odd)
                 val itemView = LayoutInflater.from(parent.context).inflate(R.layout.album_list_row_odd, parent, false)
 
                 return AlbumViewHolderOdd(itemView, itemClick)
@@ -68,15 +66,15 @@ class AlbumAdapter(private val albumsList: MutableList<Album>,
             heardIconUpdate(album.heard)
 
 
-//            heardIcon.rotationY = 0f
-//            val duration: Long = 120
-//            heardIcon.animate().rotationY(90f).setDuration(duration).setListener(object : SimpleAnimatorListener() {
-//                override fun onAnimationEnd(animation: Animator) {
-//                    heardIconUpdate(album.heard)
-//                    heardIcon.rotationY = 270f
-//                    heardIcon.animate().rotationY(360f).setDuration(duration).setListener(null)
-//                }
-//            })
+/*            heardIcon.rotationY = 0f
+            val duration: Long = 120
+            heardIcon.animate().rotationY(90f).setDuration(duration).setListener(object : SimpleAnimatorListener() {
+                override fun onAnimationEnd(animation: Animator) {
+                    heardIconUpdate(album.heard)
+                    heardIcon.rotationY = 270f
+                    heardIcon.animate().rotationY(360f).setDuration(duration).setListener(null)
+                }
+            })*/
         }
     }
 
@@ -115,20 +113,4 @@ class AlbumAdapter(private val albumsList: MutableList<Album>,
         notifyDataSetChanged()
         notifyItemRangeChanged(position, albumsList.size)
     }
-
-//
-//    fun remove(viewHolder: RecyclerView.ViewHolder, recyclerView: RecyclerView) {
-//        val position = viewHolder.adapterPosition
-//        val album = albumsList[position]
-//        recyclerView.snack(recyclerView.context.getString(R.string.list_removed_album, album.title)) {
-//            setAction(recyclerView.context.getString(R.string.list_removed_undo), {
-//                albumsList.add(position, album)
-//                notifyItemInserted(position)
-//                notifyItemRangeChanged(position, albumsList.size)
-//            })
-//        }
-//        albumsList.removeAt(position)
-//        notifyItemRemoved(position)
-//        notifyItemRangeChanged(position, albumsList.size)
-//    }
 }

@@ -4,14 +4,13 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
-import android.support.v4.view.ViewPager
 import android.view.View
 import kotlinx.android.synthetic.main.activity_album_details.*
 import kotlinx.android.synthetic.main.toolbar_detail.*
 
 import pl.rozen.swim.recyclerviewexample.R
 import pl.rozen.swim.recyclerviewexample.domain.Album
-import pl.rozen.swim.recyclerviewexample.fragments.AlbumDetailImagesFragment
+import pl.rozen.swim.recyclerviewexample.fragments.AlbumDetailSecondFragment
 import pl.rozen.swim.recyclerviewexample.fragments.AlbumDetailMainFragment
 import pl.rozen.swim.recyclerviewexample.models.DatabaseHelper
 
@@ -46,7 +45,7 @@ class AlbumDetailsActivity : AppCompatActivity() {
     private inner class ScreenSlidePagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
         override fun getItem(position: Int) = when (position) {
             0 -> AlbumDetailMainFragment()
-            else -> AlbumDetailImagesFragment()
+            else -> AlbumDetailSecondFragment()
         }
 
         override fun getCount() = NUM_PAGES
