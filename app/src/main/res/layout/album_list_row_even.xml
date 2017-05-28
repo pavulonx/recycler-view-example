@@ -13,18 +13,17 @@
     android:paddingTop="@dimen/list_row_vertical_padding_top">
 
 
-    <ImageView
-        android:id="@+id/posterBackgroundEven"
-        android:layout_width="@dimen/list_poster_size"
-        android:layout_height="@dimen/list_poster_size"
-        android:layout_marginEnd="@dimen/list_standard_spacing" />
+    <!--<ImageView-->
+        <!--android:id="@+id/posterBackgroundEven"-->
+        <!--android:layout_width="@dimen/list_poster_size"-->
+        <!--android:layout_height="@dimen/list_poster_size"-->
+        <!--android:layout_marginEnd="@dimen/list_standard_spacing" />-->
 
     <ImageView
         android:id="@+id/posterEven"
         android:layout_width="@dimen/list_poster_size"
         android:layout_height="@dimen/list_poster_size"
-        android:layout_alignStart="@id/posterBackgroundEven"
-        android:layout_alignTop="@id/posterBackgroundEven" />
+        android:layout_marginEnd="15dp"/>
 
     <TextView
         android:id="@+id/yearEven"
@@ -41,26 +40,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/yearEven"
-        android:layout_toEndOf="@id/posterBackgroundEven"
+        android:layout_toEndOf="@id/posterEven"
         android:layout_toStartOf="@id/yearEven"
         android:textColor="@color/title"
         android:textSize="@dimen/list_title_size"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/genreEven"
+        android:id="@+id/artistEven"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/titleEven"
+        android:text="todelete"
         android:layout_marginEnd="@dimen/list_standard_spacing"
-        android:layout_toEndOf="@id/posterBackgroundEven" />
+        android:layout_toEndOf="@id/posterEven" />
+
+    <TextView
+        android:id="@+id/genreEven"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/artistEven"
+        android:layout_marginEnd="@dimen/list_standard_spacing"
+        android:layout_toEndOf="@id/posterEven" />
 
     <ImageView
         android:id="@+id/heardIconEven"
         android:layout_width="@dimen/list_heard_size"
         android:layout_height="@dimen/list_heard_size"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/posterBackgroundEven"
+        android:layout_alignTop="@+id/posterEven"
         android:layout_marginTop="@dimen/list_heard_margin_top"
         android:padding="@dimen/list_heard_padding"
         android:src="@drawable/ic_album_heard_layer" />

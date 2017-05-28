@@ -13,56 +13,134 @@
     android:paddingTop="@dimen/list_row_vertical_padding_top">
 
 
-    <ImageView
-        android:id="@+id/posterBackgroundOdd"
-        android:layout_width="@dimen/list_poster_size"
-        android:layout_height="@dimen/list_poster_size"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="@dimen/list_odd_poster_end"
-        android:layout_marginStart="@dimen/list_standard_spacing" />
+    <!--<ImageView-->
+    <!--android:id="@+id/posterBackgroundOdd"-->
+    <!--android:layout_width="@dimen/list_poster_size"-->
+    <!--android:layout_height="@dimen/list_poster_size"-->
+    <!--android:layout_marginEnd="@dimen/list_standard_spacing" />-->
 
     <ImageView
         android:id="@+id/posterOdd"
         android:layout_width="@dimen/list_poster_size"
         android:layout_height="@dimen/list_poster_size"
-        android:layout_alignStart="@id/posterBackgroundOdd"
-        android:layout_alignTop="@id/posterBackgroundOdd" />
-
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="20dp"/>
 
     <TextView
         android:id="@+id/yearOdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/list_standard_spacing"
         android:layout_marginStart="@dimen/list_standard_spacing"
         android:layout_marginTop="@dimen/list_standard_spacing"
-        android:layout_toStartOf="@id/posterBackgroundOdd"
         android:textColor="@color/year" />
 
     <TextView
         android:id="@+id/titleOdd"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@id/yearOdd"
+        android:layout_toEndOf="@id/posterOdd"
         android:layout_toStartOf="@id/yearOdd"
         android:textColor="@color/title"
         android:textSize="@dimen/list_title_size"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/genreOdd"
+        android:id="@+id/artistOdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/titleOdd"
-        android:layout_toStartOf="@id/posterBackgroundOdd" />
+        android:text="todelete"
+        android:layout_marginEnd="@dimen/list_standard_spacing"
+        android:layout_toEndOf="@id/posterOdd" />
 
+    <TextView
+        android:id="@+id/genreOdd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/artistOdd"
+        android:layout_marginEnd="@dimen/list_standard_spacing"
+        android:layout_toEndOf="@id/posterOdd" />
 
     <ImageView
         android:id="@+id/heardIconOdd"
         android:layout_width="@dimen/list_heard_size"
         android:layout_height="@dimen/list_heard_size"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/posterBackgroundOdd"
+        android:layout_alignTop="@+id/posterOdd"
         android:layout_marginTop="@dimen/list_heard_margin_top"
         android:padding="@dimen/list_heard_padding"
         android:src="@drawable/ic_album_heard_layer" />
+
 </RelativeLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:id="@+id/parentOdd"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="?android:attr/selectableItemBackground"-->
+    <!--android:clickable="true"-->
+    <!--android:focusable="true"-->
+    <!--android:orientation="vertical"-->
+    <!--android:paddingBottom="@dimen/list_row_vertical_padding_bottom"-->
+    <!--android:paddingLeft="@dimen/list_row_horizontal_padding"-->
+    <!--android:paddingRight="@dimen/list_row_horizontal_padding"-->
+    <!--android:paddingTop="@dimen/list_row_vertical_padding_top">-->
+
+
+    <!--<ImageView-->
+        <!--android:id="@+id/posterBackgroundOdd"-->
+        <!--android:layout_width="@dimen/list_poster_size"-->
+        <!--android:layout_height="@dimen/list_poster_size"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_marginEnd="@dimen/list_odd_poster_end"-->
+        <!--android:layout_marginStart="@dimen/list_standard_spacing" />-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/posterOdd"-->
+        <!--android:layout_width="@dimen/list_poster_size"-->
+        <!--android:layout_height="@dimen/list_poster_size"-->
+        <!--android:layout_alignStart="@id/posterBackgroundOdd"-->
+        <!--android:layout_alignTop="@id/posterBackgroundOdd" />-->
+
+
+    <!--<TextView-->
+        <!--android:id="@+id/yearOdd"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginStart="@dimen/list_standard_spacing"-->
+        <!--android:layout_marginTop="@dimen/list_standard_spacing"-->
+        <!--android:layout_toStartOf="@id/posterBackgroundOdd"-->
+        <!--android:textColor="@color/year" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/titleOdd"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignTop="@id/yearOdd"-->
+        <!--android:layout_toStartOf="@id/yearOdd"-->
+        <!--android:textColor="@color/title"-->
+        <!--android:textSize="@dimen/list_title_size"-->
+        <!--android:textStyle="bold" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/genreOdd"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/titleOdd"-->
+        <!--android:layout_toStartOf="@id/posterBackgroundOdd" />-->
+
+
+    <!--<ImageView-->
+        <!--android:id="@+id/heardIconOdd"-->
+        <!--android:layout_width="@dimen/list_heard_size"-->
+        <!--android:layout_height="@dimen/list_heard_size"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_alignTop="@+id/posterBackgroundOdd"-->
+        <!--android:layout_marginTop="@dimen/list_heard_margin_top"-->
+        <!--android:padding="@dimen/list_heard_padding"-->
+        <!--android:src="@drawable/ic_album_heard_layer" />-->
+<!--</RelativeLayout>-->

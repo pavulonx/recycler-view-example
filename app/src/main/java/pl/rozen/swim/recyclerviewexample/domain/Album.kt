@@ -4,7 +4,7 @@ import android.support.annotation.DrawableRes
 import pl.rozen.swim.recyclerviewexample.R
 
 class Album(val title: String = "",
-            val author: String = "",
+            val artist: String = "",
             val genre: String = "",
             val year: String = "",
             val description: String = "",
@@ -15,7 +15,7 @@ class Album(val title: String = "",
             var rating: Float = 0.0f) {
 
     override fun toString(): String {
-        return "Album(title='$title', author='$author', genre='$genre', year='$year')"
+        return "Album(title='$title', artist='$artist', genre='$genre', year='$year')"
     }
 
     companion object {

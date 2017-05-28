@@ -47,8 +47,9 @@ class AlbumAdapter(private val albumsList: MutableList<Album>,
             }
         }
 
-        protected fun bindViews(album: Album, poster: ImageView, title: TextView, genre: TextView, year: TextView, heardIcon: ImageView) = with(album) {
+        protected fun bindViews(album: Album, poster: ImageView, title: TextView, artist: TextView, genre: TextView, year: TextView, heardIcon: ImageView) = with(album) {
             poster.imageResource = posterId
+            artist.text = this.artist
             title.text = this.title
             genre.text = this.genre
             year.text = this.year
@@ -81,14 +82,14 @@ class AlbumAdapter(private val albumsList: MutableList<Album>,
     class AlbumViewHolderEven(itemView: View, itemClick: (Album) -> Unit) : AlbumViewHolder(itemView, itemView.heardIconEven, itemClick) {
         override fun bindAlbum(album: Album) = with(itemView) {
             super.bindAlbum(album)
-            bindViews(album, posterEven, titleEven, genreEven, yearEven, heardIconEven)
+            bindViews(album, posterEven, titleEven, artistEven, genreEven, yearEven, heardIconEven)
         }
     }
 
     class AlbumViewHolderOdd(itemView: View, itemClick: (Album) -> Unit) : AlbumViewHolder(itemView, itemView.heardIconOdd, itemClick) {
         override fun bindAlbum(album: Album) = with(itemView) {
             super.bindAlbum(album)
-            bindViews(album, posterOdd, titleOdd, genreOdd, yearOdd, heardIconOdd)
+            bindViews(album, posterOdd, titleOdd, artistOdd, genreOdd, yearOdd, heardIconOdd)
         }
 
     }

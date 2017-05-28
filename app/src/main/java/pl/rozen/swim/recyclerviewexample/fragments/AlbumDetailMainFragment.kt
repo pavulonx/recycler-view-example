@@ -28,7 +28,7 @@ class AlbumDetailMainFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         this.album = (activity as AlbumDetailsActivity).album
         description_text_view.text = this.album.description
-        album_author_text_view.text = this.album.author
+        album_author_text_view.text = this.album.artist
         album_title_text_view.text = this.album.title
         album_detail_rating_bar.rating = this.album.rating
         poster_album_detail_image_view.imageResource = this.album.posterId
