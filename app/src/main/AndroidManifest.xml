@@ -8,10 +8,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".activities.MainActivity"
-            android:label="@string/main_activity_label">
+            android:label="@string/main_activity_label"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,10 +22,12 @@
         <activity
             android:name=".activities.AboutActivity"
             android:label="@string/about_activity_label"
-            android:parentActivityName=".activities.MainActivity" />
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme"/>
         <activity
             android:name=".activities.AlbumDetailsActivity"
             android:label="@string/about_activity_label"
+            android:theme="@style/AppTheme"
             android:parentActivityName=".activities.MainActivity" />
     </application>
 

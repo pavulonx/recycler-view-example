@@ -18,13 +18,14 @@ import pl.rozen.swim.recyclerviewexample.BuildConfig
 
 class AboutActivity : AppCompatActivity() {
 
-    val toolbar_about by lazy { find<Toolbar>(R.id.toolbar_about) }
+//    val toolbar_about by lazy { find<Toolbar>(R.id.toolbar_about) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about)
 
-        setSupportActionBar(toolbar_about)
+//        setSupportActionBar(toolbar_about)
+
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
         app_version.text = getString(R.string.app_version_about, BuildConfig.VERSION_NAME)

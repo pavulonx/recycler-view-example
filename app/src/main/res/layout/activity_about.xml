@@ -10,15 +10,11 @@
         android:layout_height="wrap_content"
         tools:context="pl.rozen.swim.recyclerviewexample.activities.AboutActivity">
 
-        <include
-            android:id="@+id/toolbar_about"
-            layout="@layout/toolbar_general" />
 
         <ImageView
             android:id="@+id/about_background"
             android:layout_width="match_parent"
             android:layout_height="240dp"
-            android:layout_below="@id/toolbar_about"
             android:adjustViewBounds="true"
             android:clickable="false"
             android:contentDescription="@string/about_background_description"
@@ -29,7 +25,6 @@
             android:id="@+id/about_face"
             android:layout_width="240dp"
             android:layout_height="240dp"
-            android:layout_below="@id/toolbar_about"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             android:clickable="true"

@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentStatePagerAdapter
 import android.view.View
 import kotlinx.android.synthetic.main.activity_album_details.*
-import kotlinx.android.synthetic.main.toolbar_detail.*
 
 import pl.rozen.swim.recyclerviewexample.R
 import pl.rozen.swim.recyclerviewexample.domain.Album
@@ -30,7 +29,7 @@ class AlbumDetailsActivity : AppCompatActivity() {
         val albumIndex = intent.getIntExtra(MOVIE_INDEX, -1)
         album = DatabaseHelper.getAlbumAt(albumIndex)
 
-        setSupportActionBar(toolbar_detail)
+//        setSupportActionBar(toolbar_detail)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
