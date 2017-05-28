@@ -8,8 +8,8 @@ class Album(val title: String = "",
             val genre: String = "",
             val year: String = "",
             val description: String = "",
-            val trackList: List<Track> = ArrayList(),
-            @DrawableRes val posterId: Int = UNDEFINED_POSTER_IMAGE,
+            val artistsList: List<Artist> = ArrayList(),
+            @DrawableRes val coverID: Int = UNDEFINED_POSTER_IMAGE,
             val imagesIds: List<Int> = ArrayList(),
             var heard: Boolean = false,
             var rating: Float = 0.0f) {
@@ -20,18 +20,18 @@ class Album(val title: String = "",
 
     companion object {
         val UNDEFINED_POSTER_IMAGE: Int = R.drawable.undefined_album_poster
+        val UNDEFINED_ALBUM_IMAGE: Int = R.drawable.undefined_album_image
     }
 }
 
-class Track(val title: String = "",
-            val name: String = "",
-            @DrawableRes val photoId: Int = UNDEFINED_TRACK_IMAGE) {
+class Artist(val name: String = "",
+             @DrawableRes val photoId: Int = UNDEFINED_ARTIST_IMAGE) {
 
     override fun toString(): String {
-        return "Track(title='$title', name='$name', photoId=$photoId)"
+        return "Artist(ame='$name', photoId=$photoId)"
     }
 
     companion object {
-        val UNDEFINED_TRACK_IMAGE: Int = R.drawable.undefined_track_image
+        val UNDEFINED_ARTIST_IMAGE: Int = R.drawable.undefined_person_image
     }
 }

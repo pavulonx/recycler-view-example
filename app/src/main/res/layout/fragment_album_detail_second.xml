@@ -9,7 +9,7 @@
 
     <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/gird_layout_images"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:columnCount="3"
         android:orientation="vertical"
@@ -29,8 +29,7 @@
             android:layout_row="0"
             android:layout_rowWeight="1"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/no_image" />
+            android:scaleType="centerCrop" />
 
 
         <ImageView
@@ -42,8 +41,7 @@
             android:layout_row="0"
             android:layout_rowWeight="1"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/no_image" />
+            android:scaleType="centerCrop" />
 
 
         <ImageView
@@ -55,8 +53,7 @@
             android:layout_row="0"
             android:layout_rowWeight="1"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/no_image" />
+            android:scaleType="centerCrop" />
 
 
         <ImageView
@@ -68,8 +65,7 @@
             android:layout_row="1"
             android:layout_rowWeight="1"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/no_image" />
+            android:scaleType="centerCrop" />
 
 
         <ImageView
@@ -81,8 +77,7 @@
             android:layout_row="1"
             android:layout_rowWeight="1"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/no_image" />
+            android:scaleType="centerCrop" />
 
 
         <ImageView
@@ -94,8 +89,7 @@
             android:layout_row="1"
             android:layout_rowWeight="1"
             android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/no_image" />
+            android:scaleType="centerCrop" />
 
     </GridLayout>
 
@@ -107,10 +101,11 @@
         android:layout_height="64dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:scaleType="fitCenter"
-        app:layout_constraintTop_toBottomOf="@id/gird_layout_images"
+        app:layout_constraintTop_toBottomOf="@+id/gird_layout_images"
         android:src="@drawable/undefined_person_image"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp" />
 
     <TextView
         android:id="@+id/artist_text_view_0"
@@ -123,7 +118,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/artist_image_view_0"
         android:layout_marginBottom="8dp"
         app:layout_constraintTop_toTopOf="@+id/artist_image_view_0"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp" />
 
     <ImageView
         android:id="@+id/artist_image_view_1"
@@ -131,10 +127,11 @@
         android:layout_height="64dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:scaleType="fitCenter"
-        app:layout_constraintTop_toBottomOf="@id/artist_image_view_0"
+        app:layout_constraintTop_toBottomOf="@+id/artist_image_view_0"
         android:src="@drawable/undefined_person_image"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp" />
 
     <TextView
         android:id="@+id/artist_text_view_1"
@@ -147,7 +144,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/artist_image_view_1"
         android:layout_marginBottom="8dp"
         app:layout_constraintTop_toTopOf="@+id/artist_image_view_1"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp" />
 
     <ImageView
         android:id="@+id/artist_image_view_2"
@@ -155,10 +153,11 @@
         android:layout_height="64dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:scaleType="fitCenter"
-        app:layout_constraintTop_toBottomOf="@id/artist_image_view_1"
+        app:layout_constraintTop_toBottomOf="@+id/artist_image_view_1"
         android:src="@drawable/undefined_person_image"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp" />
 
     <TextView
         android:id="@+id/artist_text_view_2"
@@ -171,7 +170,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/artist_image_view_2"
         android:layout_marginBottom="8dp"
         app:layout_constraintTop_toTopOf="@+id/artist_image_view_2"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp" />
 
     <ImageView
         android:id="@+id/artist_image_view_3"
@@ -179,10 +179,11 @@
         android:layout_height="64dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:scaleType="fitCenter"
-        app:layout_constraintTop_toBottomOf="@id/artist_image_view_2"
+        app:layout_constraintTop_toBottomOf="@+id/artist_image_view_2"
         android:src="@drawable/undefined_person_image"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp" />
 
     <TextView
         android:id="@+id/artist_text_view_3"
@@ -195,7 +196,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/artist_image_view_3"
         android:layout_marginBottom="8dp"
         app:layout_constraintTop_toTopOf="@+id/artist_image_view_3"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp" />
 
     <!--<ListView-->
         <!--android:layout_width="0dp"-->

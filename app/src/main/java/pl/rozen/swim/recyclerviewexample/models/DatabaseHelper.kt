@@ -1,13 +1,15 @@
 package pl.rozen.swim.recyclerviewexample.models
 
+import pl.rozen.swim.recyclerviewexample.R
 import pl.rozen.swim.recyclerviewexample.domain.Album
+import pl.rozen.swim.recyclerviewexample.domain.Artist
 
 /**
  * Created by rozen on 27.05.17.
  */
 object DatabaseHelper {
 
-    val albumsList:MutableList<Album> = prepareData()
+    val albumsList: MutableList<Album> = prepareData()
 
     fun getAlbumAt(index: Int): Album {
         return albumsList[index]
@@ -19,9 +21,9 @@ object DatabaseHelper {
 
     private fun prepareData(): MutableList<Album> {
         val albums = arrayListOf(
-                Album("Got Your Six", "Five Finger Death Punch", "heavy metal", "2015", description = "Got Your Six is the sixth studio album by American heavy metal band Five Finger Death Punch. It was released on September 4, 2015 on the Prospect Park label.[2][3] Got Your Six sold 119,000 units to debut at No. 2 on the Billboard 200. The 114,000 in pure album sales made it the No. 1-selling album of the week and the band's best sales week to date. Got Your Six is also their third consecutive set to debut at No. 2."),
+                Album("Got Your Six", "Five Finger Death Punch", "heavy metal", "2015", coverID = R.drawable.ffdp_got_your_six_ac, imagesIds = listOf(R.drawable.ffdp_got_your_six_ac_1, R.drawable.ffdp_got_your_six_ac_2, R.drawable.ffdp_got_your_six_ac_3), artistsList = listOf(Artist("Janek Kowalski"), Artist("Tymek Pam"), Artist("Eryk Fam"), Artist("Michał Tam")), description = "Got Your Six is the sixth studio album by American heavy metal band Five Finger Death Punch. It was released on September 4, 2015 on the Prospect Park label.[2][3] Got Your Six sold 119,000 units to debut at No. 2 on the Billboard 200. The 114,000 in pure album sales made it the No. 1-selling album of the week and the band's best sales week to date. Got Your Six is also their third consecutive set to debut at No. 2."),
                 Album("The Wrong Side of Heaven and the Righteous Side of Hell, Volume 1",
-                        "Five Finger Death Punch", "heavy metal", "2013"),
+                        "Five Finger Death Punch", "heavy metal", "2013", artistsList = listOf(Artist("Janek Kowalski"), Artist("Tymek Pam"), Artist("Eryk Fam")), description = "ahdfa dadyf uagd ufgaud fyugad ugda yufgagdf8g 9gf9g adgf uagdsf gudg iagahdfa dadyf uagd ufgaud fyugad ugda yufgagdf8g 9gf9g adgf uagdsf gudg iagahdfa dadyf uagd ufgaud fyugad ugda yufgagdf8g 9gf9g adgf uagdsf gudg iagahdfa dadyf uagd ufgaud fyugad ugda yufgagdf8g 9gf9g adgf uagdsf gudg iagahdfa dadyf uagd ufgaud fyugad ugda yufgagdf8g 9gf9g adgf uagdsf gudg iagahdfa dadyf uagd ufgaud fyugad ugda yufgagdf8g 9gf9g adgf uagdsf gudg iagahdfa dadyf uagd ufgaud fyugad ugda yufgagdf8g 9gf9g adgf uagdsf gudg iagahdfa dadyf uagd ufgaud fyugad ugda yufgagdf8g 9gf9g adgf uagdsf gudg iagahdfa dadyf uagd ufgaud fyugad ugda yufgagdf8g 9gf9g adgf uagdsf gudg iagahdfa dadyf uagd ufgaud fyugad ugda yufgagdf8g 9gf9g adgf uagdsf gudg iag"),
                 Album("The Wrong Side of Heaven and the Righteous Side of Hell, Volume 2",
                         "Five Finger Death Punch", "heavy metal", "2013"),
                 Album("American Capitalist", "Five Finger Death Punch", "heavy metal", "2011"),

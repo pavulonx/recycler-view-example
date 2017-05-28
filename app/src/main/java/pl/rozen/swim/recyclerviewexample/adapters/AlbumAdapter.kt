@@ -48,7 +48,7 @@ class AlbumAdapter(private val albumsList: MutableList<Album>,
         }
 
         protected fun bindViews(album: Album, poster: ImageView, title: TextView, artist: TextView, genre: TextView, year: TextView, heardIcon: ImageView) = with(album) {
-            poster.imageResource = posterId
+            poster.imageResource = coverID
             artist.text = this.artist
             title.text = this.title
             genre.text = this.genre
