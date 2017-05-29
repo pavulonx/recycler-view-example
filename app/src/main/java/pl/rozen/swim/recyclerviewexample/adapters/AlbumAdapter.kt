@@ -42,7 +42,7 @@ class AlbumAdapter(private val albumsList: MutableList<Album>,
             heardIconUpdate(album.heard)
             itemView.setOnClickListener { itemClick(album) }
             itemView.setOnLongClickListener {
-                flipAlbum(album)
+                changeAlbumImage(album)
                 true
             }
         }
@@ -54,7 +54,7 @@ class AlbumAdapter(private val albumsList: MutableList<Album>,
             genre.text = this.genre
             year.text = this.year
             heardIcon.setOnClickListener {
-                flipAlbum(this)
+                changeAlbumImage(this)
             }
         }
 
@@ -62,20 +62,9 @@ class AlbumAdapter(private val albumsList: MutableList<Album>,
             heardIcon.imageResource = if (heard) R.drawable.ic_album_heard_layer else R.drawable.ic_album_unheard_layer
         }
 
-        protected fun flipAlbum(album: Album) {
+        protected fun changeAlbumImage(album: Album) {
             album.heard = !album.heard
             heardIconUpdate(album.heard)
-
-
-/*            heardIcon.rotationY = 0f
-            val duration: Long = 120
-            heardIcon.animate().rotationY(90f).setDuration(duration).setListener(object : SimpleAnimatorListener() {
-                override fun onAnimationEnd(animation: Animator) {
-                    heardIconUpdate(album.heard)
-                    heardIcon.rotationY = 270f
-                    heardIcon.animate().rotationY(360f).setDuration(duration).setListener(null)
-                }
-            })*/
         }
     }
 

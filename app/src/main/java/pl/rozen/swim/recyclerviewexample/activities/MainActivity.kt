@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.content_main.*
 import org.jetbrains.anko.startActivity
 import pl.rozen.swim.recyclerviewexample.R
 import pl.rozen.swim.recyclerviewexample.adapters.AlbumAdapter
+import pl.rozen.swim.recyclerviewexample.domain.Album
 import pl.rozen.swim.recyclerviewexample.models.DatabaseHelper
 
 
@@ -29,8 +30,8 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 
-        adapter = AlbumAdapter(albumList, { it ->
-            startActivity<AlbumDetailsActivity>(AlbumDetailsActivity.ALBUM_INDEX to albumList.indexOf(element = it))
+        adapter = AlbumAdapter(albumList, { it: Album ->
+            startActivity<AlbumDetailsActivity>(AlbumDetailsActivity.ALBUM_INDEX.to(albumList.indexOf(it)))
         })
         val mLayoutManager = LinearLayoutManager(applicationContext)
         recyclerView.layoutManager = mLayoutManager

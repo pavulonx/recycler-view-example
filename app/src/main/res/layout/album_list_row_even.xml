@@ -23,7 +23,7 @@
         android:id="@+id/posterEven"
         android:layout_width="@dimen/list_poster_size"
         android:layout_height="@dimen/list_poster_size"
-        android:layout_marginEnd="15dp"/>
+        android:layout_marginEnd="@dimen/margin_even_cover"/>
 
     <TextView
         android:id="@+id/yearEven"
