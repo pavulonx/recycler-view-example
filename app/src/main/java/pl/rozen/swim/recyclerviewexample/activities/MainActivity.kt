@@ -29,9 +29,9 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
 
-        adapter = AlbumAdapter(albumList) {
-            startActivity<AlbumDetailsActivity>(AlbumDetailsActivity.ALBUM_INDEX to albumList.indexOf(it))
-        }
+        adapter = AlbumAdapter(albumList, { it ->
+            startActivity<AlbumDetailsActivity>(AlbumDetailsActivity.ALBUM_INDEX to albumList.indexOf(element = it))
+        })
         val mLayoutManager = LinearLayoutManager(applicationContext)
         recyclerView.layoutManager = mLayoutManager
         recyclerView.itemAnimator = DefaultItemAnimator()
@@ -41,18 +41,6 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView.adapter = adapter
 
-
-//        recyclerView.addOnItemTouchListener(RecyclerTouchListener(
-//                applicationContext, recyclerView, object : RecyclerTouchListener.ClickListener {
-//            override fun onClick(view: View, position: Int) {
-////                val album = albumList[position]
-////                Toast.makeText(applicationContext, album.title + " is selected!", Toast.LENGTH_SHORT).show()
-//            }
-//
-//            override fun onLongClick(view: View, position: Int) {
-////                albumList[position].heard = !albumList[position].heard
-//            }
-//        }))
 
         val simpleItemTouchCallback: ItemTouchHelper.SimpleCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
             override fun onMove(recyclerView: RecyclerView?, viewHolder: RecyclerView.ViewHolder?, target: RecyclerView.ViewHolder?) = false
